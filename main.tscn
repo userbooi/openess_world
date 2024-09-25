@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://q7lqi1ajv8vq"]
+
+[ext_resource type="PackedScene" uid="uid://bcdynouiuue7m" path="res://player.tscn" id="1_p6d36"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_p6d36")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 713.0
+offset_top = 428.0
+offset_right = 753.0
+offset_bottom = 468.0
