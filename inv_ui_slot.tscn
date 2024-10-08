@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://kdc3k5eslf7k"]
+
+[ext_resource type="Script" path="res://inv_ui_slot.gd" id="1_44yq6"]
+[ext_resource type="Texture2D" uid="uid://d1wx3gcx5dphj" path="res://Sprites/inventory/inv_slot.png" id="1_cdryp"]
+
+[node name="inv_ui_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(75, 69)
+offset_right = 75.0
+offset_bottom = 69.0
+script = ExtResource("1_44yq6")
+
+[node name="slot_bg" type="Sprite2D" parent="."]
+position = Vector2(36.955, 34.15)
+scale = Vector2(0.189498, 0.229375)
+texture = ExtResource("1_cdryp")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(75, 69)
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 69.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+scale = Vector2(0.18, 0.18)
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 26.0
+offset_bottom = 28.0
+scale = Vector2(0.835, 0.835)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2

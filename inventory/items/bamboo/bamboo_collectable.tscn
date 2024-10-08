@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddidpewwx0ftf"]
+
+[ext_resource type="Script" path="res://inventory/items/bamboo/bamboo_collectable.gd" id="1_uqxem"]
+[ext_resource type="Texture2D" uid="uid://dnimnkpdgeg7" path="res://Sprites/items/bamboo.png" id="2_6w5ln"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mdke"]
+radius = 152.0
+
+[node name="bamboo_collectable" type="Area2D"]
+scale = Vector2(0.115, 0.115)
+script = ExtResource("1_uqxem")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6w5ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_3mdke")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
