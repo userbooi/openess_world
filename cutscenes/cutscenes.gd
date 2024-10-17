@@ -13,7 +13,6 @@ func _ready():
 	label.self_modulate.a = 0
 	label.position = Vector2(200, 520)
 	instruction.self_modulate.a = 0
-	update_scene()
 
 func update_scene():
 	if scene_num < 7:
@@ -37,11 +36,12 @@ func update_scene():
 			label.position.y = 300
 			label.text = "For Openess, however, he will get his burgers back"
 
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
 		$AnimationPlayer.play("fade_in")
 		
 		get_parent().game_state = get_parent().STATE.OPENING
 	else:
+		await get_tree().create_timer(1.5).timeout
 		end_cutscene.emit()
 	
 func out():

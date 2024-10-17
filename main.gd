@@ -5,14 +5,19 @@ extends Node2D
 
 enum STATE {OPENING, START_MENU, PLAYING, TRANSITION}
 
-var game_state = STATE.OPENING
+@export var game_state = STATE.OPENING
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ColorRect.self_modulate.a = 1
 	$Player/Camera2D.enabled = false
-
-
+	if game_state == STATE.OPENING:
+		$Cutscenes.update_scene()
+	elif game_state == STATE.START_MENU:
+		game_state = STATE.TRANSITION
+		$StartMenu.start_menu_construction()
+	else:
+		set_up_game()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("continue") and game_state == STATE.OPENING:
