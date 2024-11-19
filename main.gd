@@ -9,6 +9,7 @@ enum STATE {OPENING, START_MENU, PLAYING, TRANSITION}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$ColorRect.self_modulate.a = 1
 	$Player/Camera2D.enabled = false
 	if game_state == STATE.OPENING:
 		$Cutscenes.update_scene()
@@ -18,6 +19,7 @@ func _ready():
 	else:
 		set_up_game()
 		
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("continue") and game_state == STATE.OPENING:

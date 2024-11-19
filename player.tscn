@@ -180,6 +180,7 @@ radius = 25.688
 height = 69.7246
 
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(455, 496)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_g4jrh")
@@ -187,6 +188,7 @@ inv = ExtResource("2_gxvp7")
 speed = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(0.43, 0.43)
 sprite_frames = SubResource("SpriteFrames_js462")
 animation = &"idle_n"
@@ -197,7 +199,10 @@ shape = SubResource("CapsuleShape2D_h74tu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
-limit_top = -583
+limit_left = -992
+limit_top = -390
+limit_right = 4078
+limit_bottom = 1556
 
 [node name="inv_ui" parent="." instance=ExtResource("35_lm886")]
 anchors_preset = 8
